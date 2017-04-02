@@ -1,0 +1,546 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700);
+
+html {
+  background: url(http://img.wennermedia.com/1200-width/mj-618_348_everyone-in-the-pool-ipa-best-beginner-homebrew-recipes.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+html body {
+  box-sizing: border-box;
+  font-family: 'Crimson Text';
+  margin: 0px auto;
+}
+html body h1 {
+  text-align: center;
+  color: white;
+  text-shadow: black 0.1em 0.1em 0.2em;
+}
+html body p {
+  color: white;
+  text-shadow: black 0.1em 0.1em 0.2em;
+}
+
+/************************************/
+/*         Navbar styles            */
+/************************************/
+ul.navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+ul.navbar li {
+  float: left;
+}
+ul.navbar li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+ul.navbar li a:hover:not(.active) {
+  background-color: red;
+}
+ul.navbar li a.active {
+  background-color: #4CAF50;
+}
+ul.navbar li.right {
+  float: right;
+}
+ul.navbar li a span img {
+  width: 30px;
+  height: 30px;
+}
+
+.spacer {
+  width: 100%;
+  height: 100px;
+}
+
+.centerBlock {
+  margin: auto;
+  width: 50%;
+  padding: 15px;
+}
+
+.centerText {
+  text-align: center;
+}
+
+.whiteShadow {
+  color: white;
+  text-shadow: black 0.1em 0.1em 0.2em;
+}
+
+
+/*********************************************/
+/***            Forms Styles               ***/
+/*********************************************/
+/*form {
+  margin: 0 20%;
+  width: 150px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 2px solid #509111;
+  border-bottom: 2px solid #5b992b;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+}*/
+
+.joinForm h2 {
+  margin: 0;
+  display: inline;
+}
+.joinForm ul {
+  list-style-type: none;
+  list-style-position: outside;
+  margin: 0px;
+  padding: 0px;
+}
+.joinForm li {
+  padding: 12px;
+  border-bottom: 0px;
+  position: relative;
+}
+.joinForm li:first-child {
+  border-bottom: 1px solid #777;
+}
+.joinForm li:last-child {
+  border-bottom: 1px solid #777;
+}
+.joinForm label {
+  width: 150px;
+  margin-top: 3px;
+  display: inline-block;
+  float: left;
+  padding: 3px;
+}
+.joinForm input {
+  height: 20px;
+  width: 50%;
+  min-width: 150px;
+  padding: 5px 8px;
+  border: 1px solid #aaa;
+  box-shadow: 0px 0px 3px #ccc, 0 10px 15px #eee inset;
+  border-radius: 2px;
+}
+.joinForm input:focus {
+  background: #fff;
+  border: 1px solid #555;
+  box-shadow: 0 0 3px #aaa;
+}
+
+*:focus {
+  outline: none;
+}
+
+.hint,
+.requiredNotice {
+  font-size: 15px;
+  font-weight: bold;
+  color: red;
+  margin: 5px 0 0 0;
+  float: center;
+}
+
+.joinLink {
+  font-size: 20px;
+  color: white;
+  margin: 5px 0 0 0;
+  display: inline;
+  float: right;
+  text-decoration: none;
+  text-shadow: 0 0 3px #aaa;
+}
+
+/*********************************************/
+/***            Button Styles              ***/
+/*********************************************/
+
+button.submit {
+  background-color: #68b12f;
+  background: -webkit-gradient(linear, left top, left bottom, from(#68b12f), to(#50911e));
+  background: -webkit-linear-gradient(top, #68b12f, #50911e);
+  background: -moz-linear-gradient(top, #68b12f, #50911e);
+  background: -ms-linear-gradient(top, #68b12f, #50911e);
+  background: -o-linear-gradient(top, #68b12f, #50911e);
+  background: linear-gradient(to bottom, #68b12f, #50911e);
+  border: 1px solid #509111;
+  border-bottom: 1px solid #5b992b;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  box-shadow: inset 0 1px 0 0 #9fd574;
+  -webkit-box-shadow: 0 1px 0 0 #9fd574 inset;
+  -moz-box-shadow: 0 1px 0 0 #9fd574 inset;
+  -ms-box-shadow: 0 1px 0 0 #9fd574 inset;
+  -o-box-shadow: 0 1px 0 0 #9fd574 inset;
+  color: white;
+  font-weight: bold;
+  padding: 6px 20px;
+  text-align: center;
+  text-shadow: 0 -1px 0 #396715;
+}
+
+button.submit:hover {
+  opacity: .85;
+  cursor: pointer;
+}
+
+button.submit:active {
+  border: 1px solid #20911e;
+  box-shadow: 0 0 10px 5px #356b0b inset;
+  -webkit-box-shadow: 0 0 10px 5px #356b0b inset;
+  -moz-box-shadow: 0 0 10px 5px #356b0b inset;
+  -ms-box-shadow: 0 0 10px 5px #356b0b inset;
+  -o-box-shadow: 0 0 10px 5px #356b0b inset;
+}
+
+button.joinLink {
+  position: relative;
+  z-index: 99999;
+  background-color: #9a0000;
+  background: -webkit-gradient(linear, left top, left bottom, from(#330000), to(#9a0000));
+  background: -webkit-linear-gradient(top, #330000, #9a0000);
+  background: -moz-linear-gradient(top, #330000, #9a0000);
+  background: -ms-linear-gradient(top, #330000, #9a0000);
+  background: -o-linear-gradient(top, #330000, #9a0000);
+  background: linear-gradient(to bottom, #330000, #9a0000);
+  border: 1px solid #000000;
+  border-bottom: 1px solid 0;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  box-shadow: inset 0 1px 0 0 #de3f3f;
+  -webkit-box-shadow: 0 1px 0 0 #de3f3f inset;
+  -moz-box-shadow: 0 1px 0 0 #de3f3f inset;
+  -ms-box-shadow: 0 1px 0 0 #de3f3f inset;
+  -o-box-shadow: 0 1px 0 0 #de3f3f inset;
+  color: white;
+  font-weight: bold;
+  padding: 6px 20px;
+  text-align: center;
+  text-shadow: 0 -1px 0 #000000;
+}
+
+button.joinLink:hover {
+  opacity: .85;
+  cursor: pointer;
+}
+
+button.joinLink:active {
+  border: 1px solid #000000;
+  box-shadow: 0 0 10px 5px #de3f3f inset;
+  -webkit-box-shadow: 0 0 10px 5px #de3f3f inset;
+  -moz-box-shadow: 0 0 10px 5px #de3f3f inset;
+  -ms-box-shadow: 0 0 10px 5px #de3f3f inset;
+  -o-box-shadow: 0 0 10px 5px #de3f3f inset;
+}
+
+/************************************************/
+/***          Generic Text                    ***/
+/************************************************/
+.genericText {
+  margin: auto;
+  width: 70%;
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 2px solid #509111;
+  border-bottom: 2px solid #5b992b;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+}
+/************************************************/
+/***          Account                         ***/
+/************************************************/
+
+/* Member Image */
+#memberImageDiv {
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+  overflow: hidden;
+  display: block;
+  margin: auto;  
+  -webkit-mask-image: -webkit-radial-gradient(circle, white, black);
+}
+
+#memberImageDiv img {
+  /*border-radius: 50%;*/
+  position: relative;
+  right: 10%;
+  bottom: 0%;
+  z-index: 5;
+  opacity: 1;
+  /*display: block;*/
+  /*width: 100%;*/
+  /*height: auto;*/
+  /*transition: .5s ease;*/
+  transition: all .5s linear;
+  /*backface-visibility: hidden;*/
+}
+
+#memberImageChange:hover {
+  -webkit-transform: scale(1.2); 
+}
+
+/*   padding: 10px 15px 10px 15px;
+   color: white;
+   background-color:#523F44;
+
+   border-radius: 50px;
+
+   -moz-transition: all .51s;
+   -o-transition: all .51s;
+   -webkit-transition: all .51s;
+   transition: all .51s;*/
+
+
+/************************************************/
+/***           The Cards Listing              ***/
+/************************************************/
+.listing {
+  -moz-columns: 20em;
+  -webkit-columns: 20em;
+  columns: 20em;
+  -moz-column-gap: 1em;
+  -webkit-column-gap: 1em;
+  column-gap: 1em;
+}
+.listing article {
+  background-color: #d0eac3;
+  margin: 1em 0;
+  padding: .5em;
+  margin-top: 0;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  -moz-border-radius: 0.5em;
+  -webkit-border-radius: 0.5em;
+  border-radius: 0.5em;
+  border-radius: 5px;
+  /* 5px rounded corners */
+  transition: 0.3s;
+  /* keep the cards as one piece, don't split them between columns */
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+.listing article:first-child {
+  margin-top: 0;
+}
+.listing article:hover {
+  margin-top: 0;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+  transition: 0.3s;
+  background-color: #ffffcc;
+}
+.listing article a {
+  text-decoration: none;
+}
+.listing article p {
+  color: black;
+}
+
+.listing form {
+  color: black;
+  text-shadow: none;
+}
+
+.card {
+  display: block;
+  margin-top: 0;
+}
+
+/*******************************************************************************/
+/***                               The Snackbar                              ***/
+/***   https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_snackbar ***/
+/*******************************************************************************/
+#snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+  border-style: solid;
+  border-color: white;
+}
+
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+@-moz-keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+@-o-keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeout {
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+@-moz-keyframes fadeout {
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+@-o-keyframes fadeout {
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+@keyframes fadeout {
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+/****************************************/
+/***              emoji               ***/
+/****************************************/
+emoji {
+  display: inline-block;
+  height: 18px;
+  width: 18px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-top: -7px;
+  margin-right: 2px;
+  transform: translate3d(0px, 3px, 0px);
+}
+
+emoji.happy {
+  background-image: url(http://imgur.com/5WUpcPZ.png);
+}
+
+.filledStar:after {
+  content: "\2605";
+  position: relative;
+}
+
+.clearStar:after {
+  content: "\2606";
+  position: relative;
+}
+
+.ingredients {
+  font-size: 12px;
+}
+
+.brewDetailBtn {
+  background-color: #4CAF50;
+  /* Green */
+  color: white;
+  border: solid;
+  border-color: #4CAF50;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 0px 0px;
+  cursor: pointer;
+  width: 100%;
+  transition: 0.4s;
+}
+
+.brewDetailBtn:hover {
+  background-color: #ffb300;
+  /* Dark Gold */
+  color: black;
+  border: solid;
+}
+
+/***********************************************/
+/***  For everything inside the member div   ***/
+/***********************************************/
+.member img {
+  height: auto;
+  width: auto;
+  max-width: 200px;
+  max-height: 200px;
+  float: left;
+  margin: 0 20px 10px 10px;
+}

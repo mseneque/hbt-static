@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Homebrew Traders</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel='stylesheet' href='./stylesheets/style.css'/>
+  <link href='http://fonts.googleapis.com/css?family=Crimson%20Text' rel='stylesheet'/>
+  <!-- /link(rel='stylesheet', href='/stylesheets/styles-chat.css') -->
+  <script src="./javascripts/userData.js"></script>
+  <script src="./javascripts/join.js"></script>
+</head>
+<body>
+  <header>
+    <ul class="navbar" draggable="false">
+      <li style="color: red;">
+        <strong> Home <br/> Brew <br/> Traders </strong>
+      </li>
+      <li class="right">
+        <a id="navbarAccount" class="whiteShadow" href='login.html'>log in</a>
+      </li>
+      <li class="right">
+        <a id="navbarAbout" class="whiteShadow" href=about.html>About</a>
+      </li> 
+  </header>
+
+  <div class="spacer"> &nbsp;</div>
+  <div class="content whiteShadow">  
+    <form id="joinForm" 
+          class="joinForm centerBlock genericText" 
+          onsubmit="checkform() && saveToLocalStorage() && navigateToPage('account.html'); return false;" 
+          action="" 
+          method="get" 
+          name="joinForm">
+      <ul>
+        <li>
+          <h2> Join </h2>
+        </li>
+        <li>
+          <label for="username">Username:</label>
+          <input id="username" 
+                type="text"
+                title="Minimum 4 alpha-numeric characters"
+                name="usernameJoin"
+                placeholder="username" />
+        </li>
+        <li>
+          <label for="email">Email:</label>
+          <input id="email" 
+                type="text"
+                title="Enter a valid email address"
+                name="email"
+                placeholder="email" />
+        </li>
+        <li>
+          <label for="pass">Password:</label>
+          <input id="pass"
+                type="password"
+                title="Password needs to be complex with at least 8 characters."
+                name="pass"
+                placeholder="enter your password"/>
+        </li>
+        <li>    
+          <label for="pass2">Re-Enter Password:</label>
+          <input id="pass2"
+                type="password"
+                name="pass2"
+                placeholder="repeat password" />
+        </li>
+        <li>
+          <span id="hint" class="requiredNotice"></span>
+        </li>
+        <li>
+          <div class="centerBlock">
+            <button class="submit" type="submit" name="submit"> JOIN &nbsp;
+              <span>
+                <emoji class="happy"></emoji>
+              </span>
+            </button>
+            <span id="success"></span>
+          </div>
+        </li>
+      </ul>
+    </form>
+
+  <script>
+    // Event ties
+    window.onload = getLocation();
+  </script>
+</body>
+</html>

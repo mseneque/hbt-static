@@ -1,0 +1,119 @@
+ [{
+  "username": "Matty",
+  "loggedIn": true,
+  "tagline": "Lets get trading!",
+  "lastLoggedIn": "27/03/2017",
+  "coords": {"lat": -31.884000, "long": 115.904000},
+  "brews": [{"name": "Brew 1",
+             "type": "Dark Ale",
+             "litres": 23,
+             "bottling": "20/03/2017",
+             "supplies": []
+           },{
+             "name": "Brew 2",
+             "type": "Pale Ale", 
+             "litres": 20,
+             "bottling": "29/03/2017",
+             "supplies": [{
+                           "username": "Johny90",
+                           "comment": "yummo", 
+                           "rating": 5,
+                           "litres": 2
+                         }]
+           },{
+            "name": "Brew 3",
+            "type": "Dark Ale", 
+             "litres": 20,
+            "bottling": "18/05/2017",
+            "supplies": [{"username": "Mochu",
+                           "comment": "The coffee was okay",
+                           "rating": 2, 
+                           "litres": 5
+                         },{
+                           "username": "Johny90",
+                           "comment": "yummo", 
+                           "rating": 4,
+                           "litres": 2
+                         }]
+           }]
+ },{ 
+  "username": "Johny90",
+  "loggedIn": true,
+  "tagline": "Fermenting grains is my pass time.",
+  "coords": {"lat": -31.793635, "long": 115.798936},
+  "brews": [{"name": "Brew 1", 
+             "type": "Dark Ale",
+             "litres": 23, 
+             "bottling": "20/03/2017", 
+             "supplies": [{"username": "Mochu",
+                           "comment": "The coffee was okay",
+                           "rating": 3,
+                           "litres": 5
+                         },{
+                           "username": "Johny90",
+                           "comment": "yummo", 
+                           "rating": 5,
+                           "litres": 2
+                         }]
+           },{
+             "name": "Brew 2",
+             "type": "Pale Ale", 
+             "bottling": "29/03/2017",
+             "litres": 30,
+             "supplies": []
+           },{
+             "name": "Brew 3",
+             "type": "Dark Ale",
+             "litres": 25,
+             "bottling": "18/05/2017",
+             "supplies": [{"username": "Mochu",
+                           "comment": "The coffee was okay",
+                           "rating": 4, "litres": 5
+                         },{  
+                           "username": "Matty",
+                           "comment": "yummo", 
+                           "rating": 5, 
+                           "litres": 2
+                         }]
+           }]
+ },{ 
+  "username": "Mochu",
+  "loggedIn": true,
+  "tagline": "My brewers tagline description",
+  "lastLoggedIn": "1/03/2017",
+  "coords": {"lat": -31.887000, "long": 115.907000}, 
+  "brews": [{"nameOfBrew": "Brew 1",
+             "type": "Dark Ale",
+             "litres": 30,
+             "bottling": "20/03/2017",
+             "supplies": []
+           }]
+},{ 
+  "username": "CoffeeIsBest",
+  "loggedIn": true,
+  "tagline": "Coffee infused beer??",
+  "lastLoggedIn": "27/03/2017",
+  "coords": {"lat": -37.832196, "long": 144.964428}, 
+  "brews": []
+},{ 
+  "username": "MelbDude",
+  "loggedIn": true,
+  "tagline": "t.a.g.l.i.n.e.",
+  "lastLoggedIn": "27/03/2017",
+  "coords": {"lat": -37.796123, "long": 144.944687}, 
+  "brews": [{
+             "name": "SomeBrew",
+             "type": "Pale Ale",
+             "litres": 25,
+             "bottling": "29/03/2017",
+             "supplies": [{"username": "Mochu",
+                           "comment": "The coffee was okay", 
+                           "rating": 2, 
+                           "litres": 5
+                         },{
+                           "username": "Matty",  
+                           "comment": "yummo", 
+                           "rating": 1, "litres": 5
+                         }]
+           }]
+}]

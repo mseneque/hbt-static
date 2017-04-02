@@ -9,7 +9,7 @@
   <script src="./javascripts/common.js"></script>
   <script src="./javascripts/userData.js"></script>
   <script src="./javascripts/join.js"></script>
-  <script src="./javascripts/account.js"></script>
+  <script src="./javascripts/account_add.js"></script>
   <script>
     if (!isLoggedIn()) {
       navigateToPage("login.html");
@@ -91,7 +91,33 @@
           </article>
           <article>
             <label for="brewType">Select a Type for your Brew: </label>
-            <input type="text" id="brewType" name="brewType"/>
+            <select>
+              <option value="ale">Ale</option>
+              <option value="lager">Lager</option>
+              <option value="stout">Stout</option>
+              <option value="pilsner">Pilsner</option>
+              <option value="paleAle">Pale Ale</option>
+              <option value="wheatBeer">Wheat Beer</option>
+              <option value="porter">Porter</option>
+              <option value="indiaPaleAle">India Pale Ale</option>
+              <option value="bitter">Bitter</option>
+              <option value="bock">Bock</option>
+              <option value="brownAle">Brown Ale</option>
+              <option value="paleLager">Pale Lager</option>
+              <option value="lambic">Lambic</option>
+              <option value="midAle">Mid-Strength Ale</option>
+              <option value="barleyWine">Barley Wine</option>
+              <option value="flandersRedAle">Flanders Red Ale</option>
+              <option value="saison">Saison</option>
+              <option value="dunkel">Dunkel</option>
+              <option value="cider">Cider</option>
+              <option value="kolsch">Kolsch</option>
+              <option value="marzen">Marzen</option>
+              <option value="creamAle">Cream ALe</option>
+              <option value="tripel">Tripel</option>
+              <option value="americanPaleAle">American Pale Ale</option>
+              <option value="other">other</option>
+            </select>
           </article>
           <article>
             <label for="brewLitres">How many Litres will you Produce?: </label>

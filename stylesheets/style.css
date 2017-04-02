@@ -302,6 +302,8 @@ button.joinLink:active {
   -webkit-transform: scale(1.2); 
 }
 
+
+
 /*   padding: 10px 15px 10px 15px;
    color: white;
    background-color:#523F44;
@@ -548,13 +550,14 @@ emoji.happy {
 /****************************************/
 /***               map                ***/
 /****************************************/
-#map {
+#mapBlock {
   height:150px;
   display: inline;
 }
 
 .img-responsive {
   display: block;
+  margin: auto;
   height: auto;
   max-width: 100%;
 }

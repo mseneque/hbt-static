@@ -37,4 +37,4 @@ function fillPageData() {
     ratingElement = document.getElementById('rating');
     outputRating(3, ratingElement);
 
-} 
+}

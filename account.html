@@ -10,6 +10,7 @@
   <script src="./javascripts/userData.js"></script>
   <script src="./javascripts/join.js"></script>
   <script src="./javascripts/account.js"></script>
+
   <script>
     if (!isLoggedIn()) {
       navigateToPage("login.html");
@@ -77,6 +78,11 @@
         <p id="rating">Brewers average rating: </p> 
       </div>
       <hr/>
+      <div id="map">
+        <img class="img-responsive img-rounded" src='http://maps.googleapis.com/maps/api/staticmap?center=-31.884000,115.904000&zoom=11&size=300x100&sensor=false&markers=51.455041,-0.9690884&scale=2'/>
+        <!-- img-responsive.img-rounded -->
+      </div>
+      <hr/>
 
       <div id="brewList" class="listing">
 
@@ -102,11 +108,14 @@
     <!-- END PAGE CONTENT HERE -->
   </div>
   <script>
-    window.onload = fillPageData();
+    window.onload = fillPageData(); 
     document.getElementById('memberImageChange').onclick = function() {
       alert("<todo> Implement Change Image");
     };
+    
   </script>
+  <!-- <script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script> -->
+
 
 </body>
 </html>

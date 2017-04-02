@@ -544,3 +544,21 @@ emoji.happy {
   float: left;
   margin: 0 20px 10px 10px;
 }
+
+/****************************************/
+/***               map                ***/
+/****************************************/
+#map {
+  height:150px;
+  display: inline;
+}
+
+.img-responsive {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+.img-rounded {
+  border-radius: 6px;
+}

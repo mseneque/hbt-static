@@ -68,18 +68,20 @@
       <div class="centerText">
         <h1 id="memberName"></h1>
         <div id="memberImageDiv">
-          <img src="./images/new_member/profile.png" alt="Avatar" id="memberImageChange"/>
+          <!-- <img src="./images/new_member/profile.png" alt="Avatar" id="memberImageChange"/> -->
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSODALYDYo2dqN0DG_kPNi2X7EAy1K8SpRRZQWkNv9alC62IHggOw" alt="Avatar" id="memberImageChange"/>
+
         </div>
         <p></p>
         &nbsp;
         <a href='account_add.html'>
-          <button id="addBrew">Add New Brew</button>
+          <button class="submit" id="addBrew">Add New Brew</button>
         </a>
         <p id="rating">Brewers average rating: </p> 
       </div>
       <hr/>
       <div id="mapBlock">
-        <h2>Location:<img id="map" class="img-responsive img-rounded" alt="location map"/></h2>
+        <h2>Location:<img id="map" class="img-responsive img-rounded" alt="location map unable to load ..."/></h2>
         
         <!-- img-responsive.img-rounded -->
       </div>
@@ -107,9 +109,8 @@
       </div>
     </article>
 
-
-
     <!-- END PAGE CONTENT HERE -->
+    <div id="snackbar"></div>
   </div>
   <script>
     window.onload = fillPageData(); 

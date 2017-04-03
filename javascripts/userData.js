@@ -1,13 +1,9 @@
-// Navigates to page
-function navigateToPage(page) {
-    window.location.href = page;
-}
 
 // Retrieve Member object data from the browser's localStorage
-function retrieveFromLocalStorage() {
+function retrieveFromLocalStorage(objectName) {
     if (typeof(Storage) !== "undefined") {
         // Retrieve Member object
-        var RetrievedObject = JSON.parse(localStorage.getItem("Member"));
+        var RetrievedObject = JSON.parse(localStorage.getItem(objectName));
         return RetrievedObject;
     } else {
         // Sorry! No Web Storage support..
@@ -15,8 +11,8 @@ function retrieveFromLocalStorage() {
     }
 }
 
-// Save Join data to local browser storage
-function saveToLocalStorage() {
+// Save Member data to local browser storage
+function saveMemberToLocalStorage() {
     if (typeof(Storage) !== "undefined") {
         // Code for localStorage/sessionStorage.
         // Retreive previous recorded Member Data
@@ -40,8 +36,29 @@ function saveToLocalStorage() {
     }
 }
 
+function snackbarMessageLocalStorage(message) {
+    // This will be used to store snackbar message to Local storage to be used 
+    // in the subsequent page of the web application
+    if (typeof(Storage) !== "undefined") {
+        
+        // Stringify the object before saving to browser
+        var messageStr = JSON.stringify(message);
+        console.log(messageStr);
+        localStorage.setItem("snackbarMessage", messageStr);
+        return true;
+
+    } else {
+        // Sorry! No Web Storage support..
+
+    }
+}   
+
+function clearSnackbar() {
+    localStorage.removeItem("snackbarMessage");
+}
+
 function isLoggedIn() {
-    var Member = retrieveFromLocalStorage();
+    var Member = retrieveFromLocalStorage("Member");
     if (Member["username"] !== undefined) {
         return true;
     }

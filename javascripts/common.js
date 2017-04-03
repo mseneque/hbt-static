@@ -27,3 +27,20 @@ function loadJsonData(requestURL){
   request.send();
   return request;
 }
+
+function showSnackbar(message) {
+  if(message) {
+    var x = document.getElementById("snackbar")
+    x.innerHTML = message;
+    x.className = "show";
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+    clearSnackbar();
+    return true;
+  }
+}
+
+// Navigates to page
+function navigateToPage(page) {
+    window.location.href = page;
+}
+

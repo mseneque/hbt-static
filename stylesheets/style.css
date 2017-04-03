@@ -286,12 +286,12 @@ button.joinLink:active {
 #memberImageDiv img {
   /*border-radius: 50%;*/
   position: relative;
-  right: 10%;
+  right: 0%;
   bottom: 0%;
   z-index: 5;
   opacity: 1;
   /*display: block;*/
-  /*width: 100%;*/
+  width: 100%;
   /*height: auto;*/
   /*transition: .5s ease;*/
   transition: all .5s linear;

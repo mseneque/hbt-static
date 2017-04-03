@@ -6,6 +6,7 @@
   <link rel='stylesheet' href='./stylesheets/style.css'/>
   <link href='http://fonts.googleapis.com/css?family=Crimson%20Text' rel='stylesheet'/>
   <!-- /link(rel='stylesheet', href='/stylesheets/styles-chat.css') -->
+  <script src="./javascripts/common.js"></script>
   <script src="./javascripts/userData.js"></script>
   <script src="./javascripts/join.js"></script>
 </head>
@@ -27,7 +28,7 @@
   <div class="content whiteShadow">  
     <form id="joinForm" 
           class="joinForm centerBlock genericText" 
-          onsubmit="checkform() && saveToLocalStorage() && navigateToPage('account.html'); return false;" 
+          onsubmit="checkform() && saveMemberToLocalStorage() && navigateToPage('account.html'); return false;" 
           action="" 
           method="get" 
           name="joinForm">

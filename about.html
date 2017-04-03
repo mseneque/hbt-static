@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HomeBrew Traders</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel='stylesheet' href='./stylesheets/style.css'/>
+  <link href='http://fonts.googleapis.com/css?family=Crimson%20Text' rel='stylesheet'/>
+  <!-- /link(rel='stylesheet', href='/stylesheets/styles-chat.css') -->
+  <script src="./javascripts/common.js"></script>
+  <script src="./javascripts/userData.js"></script>
+  <script src="./javascripts/join.js"></script>
+  <script src="./javascripts/account.js"></script>
+
+  <script>
+    if (!isLoggedIn()) {
+      navigateToPage("login.html");
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <ul class="navbar" draggable="false">
+      <li style="color: red;">
+        <strong> Home <br/> Brew <br/> Traders </strong>
+      </li>
+      <li>
+        <a href="/" draggable="false"> 
+          <span>
+            <img src="./images/home.svg" draggable="false" alt="home image" />
+            <br/>
+            <span class="whiteShadow">Trading</span>
+          </span>
+        </a>
+      </li>  
+      <li>
+        <a href="account.html" draggable="false">
+          <span> 
+            <img src="./images/bell.svg" draggable="false" alt="notification image" /> 
+            <br/>
+            <span class="whiteShadow">Account</span>
+          </span>
+        </a>
+      </li>  
+      <li>
+        <a href="/all" draggable="false"> 
+          <span> 
+            <img src="./images/chat.svg" draggable="false" alt="chat image" /> 
+            <br/>
+            <span class="whiteShadow">All Members</span>
+          </span>
+        </a>
+      </li>
+      <li class="right">
+        <a id="navbarAccount" class="whiteShadow" href='login.html'>log in</a>
+      </li>
+      <li class="right">
+        <a id="navbarAbout" class="whiteShadow" href=about.html>About</a>
+      </li>
+    </ul> 
+  </header>
+
+  <div class="spacer"> &nbsp;</div>
+  <div class="content whiteShadow genericText">  
+    <!-- ************************************** -->
+    <!-- **        PAGE CONTENT HERE         ** -->
+    <!-- ************************************** -->
+    <h2>About HomeBrew Trader</h2>
+    <p>This stie is targeted towards All-Grain Home brewers of beer, just like you! You love the freshness of your batch, beer as it was initially intended. No preservatives. Made in small batches. Not for mass production at consumer scale, where additives are needed.<br/>You brew beer 25 litres to 30 litres at a time, and its about time you get some variety in the mix.<br/>With Home Brew Trader you can trade part batches with others in your area that are willing to trade part of their batches with you. No longer will you be stuck drinking 30L of the same batch until you move on to the next. Add some variety to your life with Home Brew Trader.</p>
+    <!-- END PAGE CONTENT HERE -->
+    <div id="snackbar"></div>
+  </div>
+  <script>
+  </script>
+  <!-- <script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script> -->
+
+
+</body>
+</html>
+
+

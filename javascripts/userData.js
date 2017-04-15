@@ -11,32 +11,47 @@ function retrieveFromLocalStorage(objectName) {
     }
 }
 
-// Save Member data to local browser storage
-function saveMemberToLocalStorage() {
-    if (typeof(Storage) !== "undefined") {
-        // Code for localStorage/sessionStorage.
-        // Retreive previous recorded Member Data
-        var MemberStr = localStorage.getItem("Member");
-        var Member = JSON.parse(MemberStr);
+// Generic function to save to local storage
+// This will eventually replace the saveMemerToLocalStorage function.
+// inputs: objectName     as string
+//         objectData     as json object
+function saveToLocalStorage(objectName, objectData) {
+    // Check browsers local storage compatability
+    if (isBrowserCompatible()) {
+        // Retrieve stringified json data and parse it to an object.
+        var objectStr = localStorage.getItem(objectName);
+        var objectObj = JSON.parse(objectStr);
 
-        Member['brews'] = [];
-        Member['username'] = document.getElementById("username").value;
-        Member['email'] =  document.getElementById("email").value;
-        Member['password'] =  document.getElementById("pass").value;
+        // Merge data of the same properties to an existing object
+        objectObj = Object.assign(objectObj, objectData);
 
-        // Stringify the object before saving to browser
-        var MemberStr = JSON.stringify(Member);
-        console.log(MemberStr);
-        localStorage.setItem("Member", MemberStr);
+        // Stringify the data to place it back in ot the local storage
+        var objectStr = JSON.stringify(objectObj);
+        localStorage.setItem(objectName, objectStr);
         return true;
-
-    } else {
-        // Sorry! No Web Storage support..
-
-    }
+    } 
+    return false;  
 }
 
-function snackbarMessageLocalStorage(message) {
+function pushObjectToList(objectName, objectListName, objectData) {
+    // Check browsers local storage compatability
+    if (isBrowserCompatible()) {
+        // retrieve stringified json data and parse it to an object.
+        var objectStr = localStorage.getItem(objectName);
+        var objectObj = JSON.parse(objectStr);
+
+        // Push Data Object to a list whose parent is an object.
+        objectObj[objectListName].push(objectData);
+
+        // Stringify the data to place it back in ot the local storage
+        var objectStr = JSON.stringify(objectObj);
+        localStorage.setItem(objectName, objectStr);
+        return true;
+    }
+    return false;
+}
+
+function snackbarMessage(message) {
     // This will be used to store snackbar message to Local storage to be used 
     // in the subsequent page of the web application
     if (typeof(Storage) !== "undefined") {
@@ -49,7 +64,7 @@ function snackbarMessageLocalStorage(message) {
 
     } else {
         // Sorry! No Web Storage support..
-
+        console.log('Sorry! No Web Storage support..');
     }
 }   
 
@@ -59,9 +74,19 @@ function clearSnackbar() {
 
 function isLoggedIn() {
     var Member = retrieveFromLocalStorage("Member");
-    if (Member["username"] !== undefined) {
+    if ((!typeof(Member) === 'undefined') || Member["username"] !== undefined) {
+        // Member is logged in
         return true;
     }
     else
         return false;
+}
+
+function isBrowserCompatible() {
+    if (typeof(Storage) !== "undefined") {
+        return true;
+    } else {
+        console.log("Your browser doesn't support local storage");
+        return false;
+    }
 }

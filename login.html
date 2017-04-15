@@ -7,41 +7,42 @@
   <link href='http://fonts.googleapis.com/css?family=Crimson%20Text' rel='stylesheet'/>
   <!-- /link(rel='stylesheet', href='/stylesheets/styles-chat.css') -->
   <script src="./javascripts/userData.js"></script>
+  <script src="./javascripts/common.js"></script>
 
 </head>
 <body>
+  <div id="container">
   <header>
     <ul class="navbar" draggable="false">
-      <li style="color: red;">
+      <li>
         <strong> Home <br/> Brew <br/> Traders </strong>
       </li>
       <li class="right">
-        <a id="navbarAccount" class="whiteShadow" href='login.html'>log in</a>
+        <a class="active whiteShadow" id="navbarAccount" href='login.html'>log in</a>
       </li>
       <li class="right">
         <a id="navbarAbout" class="whiteShadow" href=about.html>About</a>
       </li> 
+    </ul>
   </header>
 
   <div class="spacer"> &nbsp;</div>
   <div class="content whiteShadow">  
-    <form class="joinForm centerBlock genericText" action="" method="post" name="joinForm">
+    <form class="joinForm centerBlock genericText" method="post" id="joinForm" name="joinForm">
       <ul>
         <li>
           <h2>Login</h2>
           <span>
-            <a href="join.html">
-              <button class="joinLink" type="button">Click here to JOIN</button>
-            </a>
+            <button id="joinLink" class="joinLink" type="button">Click here to JOIN</button>
           </span>
         </li>
         <li>
-          <label for="username">Username:</label>
-          <input type="text" name="name" placeholder="username" required />
+          <label for="name">Username:</label>
+          <input type="text" id="name" name="name" placeholder="username" required />
         </li>
         <li>
-          <label for="password">Password:</label>
-          <input type="password" name="password" placeholder="password" required />
+          <label for="pass">Password:</label>
+          <input type="password" id="pass" name="password" placeholder="password" required />
         </li>
         <li>
           <div class="centerBlock">
@@ -50,5 +51,16 @@
         </li>
       </ul>
     </form>
+  </div>
+  </div>
+  <script>
+  window.onload = insertFooter();
+  document.getElementById('joinForm').onsubmit = function() {
+    alert("No Authentication implemented yet, please try to join to see mock features.")
+  }
+  document.getElementById('joinLink').onclick = function() {
+    navigateToPage('join.html');
+  }
+ </script>
 </body>
 </html>

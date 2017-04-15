@@ -8,8 +8,12 @@ html {
   background-size: cover;
 }
 
+*:focus {
+  outline: none;
+}
+
 html body {
-  box-sizing: border-box;
+  /*box-sizing: border-box;*/
   font-family: 'Crimson Text';
   margin: 0px auto;
 }
@@ -26,8 +30,18 @@ html body p {
 /************************************/
 /*         Navbar styles            */
 /************************************/
+
+body header ul li strong {
+  text-shadow: 2px 2px #5ea328;
+}
+
 ul.navbar {
   list-style-type: none;
+  background-color: #5ca126;
+  border-color: #427719;
+  border-style: solid;
+  border-width: 0px;  
+  border-bottom-width: 3px;
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -35,6 +49,11 @@ ul.navbar {
   top: 0;
   width: 100%;
   z-index: 999;
+  background: url(http://img.wennermedia.com/1200-width/mj-618_348_everyone-in-the-pool-ipa-best-beginner-homebrew-recipes.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;  
 }
 
 ul.navbar li {
@@ -85,18 +104,6 @@ ul.navbar li a span img {
 /*********************************************/
 /***            Forms Styles               ***/
 /*********************************************/
-/*form {
-  margin: 0 20%;
-  width: 150px;
-  background-color: rgba(0, 0, 0, 0.7);
-  border: 2px solid #509111;
-  border-bottom: 2px solid #5b992b;
-  border-radius: 15px;
-  -webkit-border-radius: 15px;
-  -moz-border-radius: 15px;
-  -ms-border-radius: 15px;
-  -o-border-radius: 15px;
-}*/
 
 .joinForm h2 {
   margin: 0;
@@ -141,10 +148,6 @@ ul.navbar li a span img {
   box-shadow: 0 0 3px #aaa;
 }
 
-*:focus {
-  outline: none;
-}
-
 .hint,
 .requiredNotice {
   font-size: 15px;
@@ -167,7 +170,7 @@ ul.navbar li a span img {
 /*********************************************/
 /***            Button Styles              ***/
 /*********************************************/
-
+/*Submit button*/
 button.submit {
   background-color: #68b12f;
   background: -webkit-gradient(linear, left top, left bottom, from(#68b12f), to(#50911e));
@@ -209,6 +212,49 @@ button.submit:active {
   -o-box-shadow: 0 0 10px 5px #356b0b inset;
 }
 
+/*Cancel button*/
+button.cancel {
+  background-color: #F44336;
+  background: -webkit-gradient(linear, left top, left bottom, from(#F44336), to(#a22f27));
+  background: -webkit-linear-gradient(top, #F44336, #a22f27);
+  background: -moz-linear-gradient(top, #F44336, #a22f27);
+  background: -ms-linear-gradient(top, #F44336, #a22f27);
+  background: -o-linear-gradient(top, #F44336, #a22f27);
+  background: linear-gradient(to bottom, #F44336, #a22f27);
+  border: 1px solid #d4382d;
+  border-bottom: 1px solid #9e2c24;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  box-shadow: inset 0 1px 0 0 #e6766e;
+  -webkit-box-shadow: 0 1px 0 0 #e6766e inset;
+  -moz-box-shadow: 0 1px 0 0 #e6766e inset;
+  -ms-box-shadow: 0 1px 0 0 #e6766e inset;
+  -o-box-shadow: 0 1px 0 0 #e6766e inset;
+  color: white;
+  font-weight: bold;
+  padding: 3px 10px;
+  text-align: center;
+  text-shadow: 0 -1px 0 #6b0a0a;
+}
+
+button.cancel:hover {
+  opacity: .85;
+  cursor: pointer;
+}
+
+button.cancel:active {
+  border: 1px solid #20911e;
+  box-shadow: 0 0 10px 5px #356b0b inset;
+  -webkit-box-shadow: 0 0 10px 5px #356b0b inset;
+  -moz-box-shadow: 0 0 10px 5px #356b0b inset;
+  -ms-box-shadow: 0 0 10px 5px #356b0b inset;
+  -o-box-shadow: 0 0 10px 5px #356b0b inset;
+}
+
+/*Join button*/
 button.joinLink {
   position: relative;
   z-index: 99999;
@@ -284,40 +330,25 @@ button.joinLink:active {
 }
 
 #memberImageDiv img {
-  /*border-radius: 50%;*/
   position: relative;
   right: 0%;
   bottom: 0%;
   z-index: 5;
   opacity: 1;
-  /*display: block;*/
   width: 100%;
-  /*height: auto;*/
-  /*transition: .5s ease;*/
   transition: all .5s linear;
-  /*backface-visibility: hidden;*/
 }
 
 #memberImageChange:hover {
   -webkit-transform: scale(1.2); 
+  cursor: pointer;
+  cursor: hand;
 }
-
-
-
-/*   padding: 10px 15px 10px 15px;
-   color: white;
-   background-color:#523F44;
-
-   border-radius: 50px;
-
-   -moz-transition: all .51s;
-   -o-transition: all .51s;
-   -webkit-transition: all .51s;
-   transition: all .51s;*/
 
 
 /************************************************/
 /***           The Cards Listing              ***/
+/***          & Homebrews Listing             ***/
 /************************************************/
 .listing {
   -moz-columns: 20em;
@@ -360,6 +391,53 @@ button.joinLink:active {
   color: black;
 }
 
+.listing article h3 {
+  text-align: left;
+  float: left;
+  display: inline;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-right: 10px;
+  color:black;
+  text-shadow: none;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+.listing article h4 {
+  text-align: left;
+  float: left;
+  display: inline;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-right: 10px;
+  color:black;
+  text-shadow: none;
+  font-weight: normal;
+  font-size: 1em;
+}
+
+.listing ul {
+  list-style-type: none;
+  list-style-position: outside;
+  margin: 0px;
+  padding: 0px;
+}
+.listing li {
+  padding: 12px;
+  border-bottom: 0px;
+  position: relative;
+  color: green;
+  text-shadow: none;
+}
+.listing table {
+  border: 1px solid black;
+  /*width: 20%;*/
+  display: inline;
+  float: right;
+  /*margin-top: 15px;*/
+}
+
 .listing form {
   color: black;
   text-shadow: none;
@@ -369,6 +447,19 @@ button.joinLink:active {
   display: block;
   margin-top: 0;
 }
+
+/* Color for stock availability table*/
+.inStock {
+  background-color: #60a729;
+}
+.limitedStock {
+  background-color: #af7917;
+}
+.outOfStock {
+  background-color: #a72929;
+}
+
+
 
 /*******************************************************************************/
 /***                               The Snackbar                              ***/
@@ -398,6 +489,7 @@ button.joinLink:active {
   animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
 
+/* Fadein All Browsers */
 @-webkit-keyframes fadein {
   from {
     bottom: 0;
@@ -438,6 +530,8 @@ button.joinLink:active {
     opacity: 1;
   }
 }
+
+/* Fadeout All Browsers */
 @-webkit-keyframes fadeout {
   to {
     bottom: 0;
@@ -555,13 +649,40 @@ emoji.happy {
   display: inline;
 }
 
-.img-responsive {
+#mapBlock img {
   display: block;
   margin: auto;
   height: auto;
   max-width: 100%;
+  border-radius: 6px;
+  cursor: pointer;
+  cursor: hand;
 }
 
-.img-rounded {
-  border-radius: 6px;
+
+/****************************************/
+/***             footer               ***/
+/****************************************/
+.footer {
+  width:100%;
+  height:100px;
+  position:relative;
+  bottom:0;
+  left:0;
+  margin-top: 40%;
+  background-color: #d0eac3;
+  border-style: solid;
+  border-width: 0px;
+  border-top-width: 2px;
+  border-top-color: #427719;
+}
+
+.footer span {
+  font-size: 0.8em;
+}
+
+.footer span:first-child {
+  color: #427719;
+  font-family: "arial";
+  font-size: 1em;
 }

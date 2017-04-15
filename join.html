@@ -13,7 +13,7 @@
 <body>
   <header>
     <ul class="navbar" draggable="false">
-      <li style="color: red;">
+      <li>
         <strong> Home <br/> Brew <br/> Traders </strong>
       </li>
       <li class="right">
@@ -22,16 +22,12 @@
       <li class="right">
         <a id="navbarAbout" class="whiteShadow" href=about.html>About</a>
       </li> 
+    </ul>
   </header>
 
   <div class="spacer"> &nbsp;</div>
   <div class="content whiteShadow">  
-    <form id="joinForm" 
-          class="joinForm centerBlock genericText" 
-          onsubmit="checkform() && saveMemberToLocalStorage() && navigateToPage('account.html'); return false;" 
-          action="" 
-          method="get" 
-          name="joinForm">
+    <form id="joinForm" class="joinForm centerBlock genericText" method="get" name="joinForm">
       <ul>
         <li>
           <h2> Join </h2>
@@ -42,7 +38,8 @@
                 type="text"
                 title="Minimum 4 alpha-numeric characters"
                 name="usernameJoin"
-                placeholder="username" />
+                placeholder="username" 
+                maxlength="10" />
         </li>
         <li>
           <label for="email">Email:</label>
@@ -58,7 +55,8 @@
                 type="password"
                 title="Password needs to be complex with at least 8 characters."
                 name="pass"
-                placeholder="enter your password"/>
+                placeholder="enter your password"
+                maxlength="64" />
         </li>
         <li>    
           <label for="pass2">Re-Enter Password:</label>
@@ -73,19 +71,23 @@
         <li>
           <div class="centerBlock">
             <button class="submit" type="submit" name="submit"> JOIN &nbsp;
-              <span>
-                <emoji class="happy"></emoji>
-              </span>
+              <emoji class="happy"></emoji>
             </button>
             <span id="success"></span>
           </div>
         </li>
       </ul>
     </form>
-
+  </div>
   <script>
     // Event ties
+    window.onload = insertFooter();
     window.onload = getLocation();
+
+    // Submit the input data from user
+    document.getElementById('joinForm').onsubmit = function() {
+      checkform() && saveMemberToLocalStorage() && navigateToPage('account.html'); return false;
+    }
   </script>
 </body>
 </html>

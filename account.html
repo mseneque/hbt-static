@@ -10,7 +10,6 @@
   <script src="./javascripts/userData.js"></script>
   <script src="./javascripts/join.js"></script>
   <script src="./javascripts/account.js"></script>
-
   <script>
     if (!isLoggedIn()) {
       navigateToPage("login.html");
@@ -20,11 +19,11 @@
 <body>
   <header>
     <ul class="navbar" draggable="false">
-      <li style="color: red;">
+      <li>
         <strong> Home <br/> Brew <br/> Traders </strong>
       </li>
       <li>
-        <a href="/" draggable="false"> 
+        <a href="trading.html" draggable="false"> 
           <span>
             <img src="./images/home.svg" draggable="false" alt="home image" />
             <br/>
@@ -41,7 +40,7 @@
           </span>
         </a>
       </li>  
-      <li>
+     <!--  <li>
         <a href="/all" draggable="false"> 
           <span> 
             <img src="./images/chat.svg" draggable="false" alt="chat image" /> 
@@ -49,9 +48,9 @@
             <span class="whiteShadow">All Members</span>
           </span>
         </a>
-      </li>
+      </li> -->
       <li class="right">
-        <a id="navbarAccount" class="whiteShadow" href='login.html'>log in</a>
+        <a id="navbarAccount" class="whiteShadow" href='login.html'>log out</a>
       </li>
       <li class="right">
         <a id="navbarAbout" class="whiteShadow" href=about.html>About</a>
@@ -66,7 +65,7 @@
     <!-- ************************************** -->
     <article class="genericText">
       <div class="centerText">
-        <h1 id="memberName"></h1>
+        <h1 id="memberName">...</h1>
         <div id="memberImageDiv">
           <!-- <img src="./images/new_member/profile.png" alt="Avatar" id="memberImageChange"/> -->
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSODALYDYo2dqN0DG_kPNi2X7EAy1K8SpRRZQWkNv9alC62IHggOw" alt="Avatar" id="memberImageChange"/>
@@ -74,53 +73,43 @@
         </div>
         <p></p>
         &nbsp;
-        <a href='account_add.html'>
+        <form action="account_add.html">
           <button class="submit" id="addBrew">Add New Brew</button>
-        </a>
-        <p id="rating">Brewers average rating: </p> 
+        </form>
+        <p id="rating">Average brew rating: </p> 
+        <p id="ratio">Beer Out/In: <span>0</span>:<span>0</span></p>
       </div>
       <hr/>
+      <!-- Location map goes here -->
       <div id="mapBlock">
-        <h2>Location:<img id="map" class="img-responsive img-rounded" alt="location map unable to load ..."/></h2>
-        
-        <!-- img-responsive.img-rounded -->
+        <h2>Location:<img id="map" alt="location map unable to load ..."/></h2>
       </div>
+      <!-- end location map -->
       <hr/>
-      <h2 id="heading"></h2>
+      <h2 id="heading">...</h2>
 
-      <div id="brewList" class="listing">
-
-      <article>
-        <ul>
-          <li id="brewName">name: Brew 1</li>
-          <li id="brewType">type: Dark Ale</li>
-          <li id="brewLitres">liters: 23</li>
-          <li id="brewBottling">bottling: 20/03/2017</li>
-          <li><button id="supplyBtn">Supply to</button></li>
-        </ul>
-      </article>
-
-      <article>
-        <p>hello</p>
-      </article>
-      <article>
-        <p>hello</p>
-      </article>
-      </div>
+      <!-- ************************************** -->
+      <!-- **        BREW LISTING HERE         ** -->
+      <!-- ************************************** -->
+      <div id="brewList" class="listing"></div>
+      <!-- END BREW LISTING -->
     </article>
-
     <!-- END PAGE CONTENT HERE -->
     <div id="snackbar"></div>
   </div>
   <script>
+    window.onload = insertFooter();
     window.onload = fillPageData(); 
     document.getElementById('memberImageChange').onclick = function() {
       alert("<todo> Implement Change Image");
     };
+    document.getElementById('map').onclick = function() {
+      alert("<todo> Implement Change Location");
+    };
+
+    // document.getElementsByTagName('footer')[0]
     
   </script>
-  <!-- <script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script> -->
-
 
 </body>
 </html>

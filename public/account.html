@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HomeBrew Traders</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel='stylesheet' href='./stylesheets/style.css'/>
+  <link href='http://fonts.googleapis.com/css?family=Crimson%20Text' rel='stylesheet'/>
+  <!-- /link(rel='stylesheet', href='/stylesheets/styles-chat.css') -->
+  <script src="./javascripts/common.js"></script>
+  <script src="./javascripts/userData.js"></script>
+  <script src="./javascripts/join.js"></script>
+  <script src="./javascripts/account.js"></script>
+  <script>
+    if (!isLoggedIn()) {
+      navigateToPage("login.html");
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <ul class="navbar" draggable="false">
+      <li>
+        <strong> Home <br/> Brew <br/> Traders </strong>
+      </li>
+      <li>
+        <a href="trading.html" draggable="false"> 
+          <span>
+            <img src="./images/home.svg" draggable="false" alt="home image" />
+            <br/>
+            <span class="whiteShadow">Trading</span>
+          </span>
+        </a>
+      </li>  
+      <li>
+        <a class="active" href="account.html" draggable="false">
+          <span> 
+            <img src="./images/bell.svg" draggable="false" alt="notification image" /> 
+            <br/>
+            <span class="whiteShadow">Account</span>
+          </span>
+        </a>
+      </li>  
+     <!--  <li>
+        <a href="/all" draggable="false"> 
+          <span> 
+            <img src="./images/chat.svg" draggable="false" alt="chat image" /> 
+            <br/>
+            <span class="whiteShadow">All Members</span>
+          </span>
+        </a>
+      </li> -->
+      <li class="right">
+        <a id="navbarAccount" class="whiteShadow" href='login.html'>log out</a>
+      </li>
+      <li class="right">
+        <a id="navbarAbout" class="whiteShadow" href=about.html>About</a>
+      </li>
+    </ul> 
+  </header>
+
+  <div class="spacer"> &nbsp;</div>
+  <div class="content whiteShadow">  
+    <!-- ************************************** -->
+    <!-- **        PAGE CONTENT HERE         ** -->
+    <!-- ************************************** -->
+    <article class="genericText">
+      <div class="centerText">
+        <h1 id="memberName">...</h1>
+        <div id="memberImageDiv">
+          <!-- <img src="./images/new_member/profile.png" alt="Avatar" id="memberImageChange"/> -->
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSODALYDYo2dqN0DG_kPNi2X7EAy1K8SpRRZQWkNv9alC62IHggOw" alt="Avatar" id="memberImageChange"/>
+
+        </div>
+        <p></p>
+        &nbsp;
+        <form action="account_add.html">
+          <button class="submit" id="addBrew">Add New Brew</button>
+        </form>
+        <p id="rating">Average brew rating: </p> 
+        <p id="ratio">Beer Out/In: <span>0</span>:<span>0</span></p>
+      </div>
+      <hr/>
+      <!-- Location map goes here -->
+      <div id="mapBlock">
+        <h2>Location:<img id="map" alt="location map unable to load ..."/></h2>
+      </div>
+      <!-- end location map -->
+      <hr/>
+      <h2 id="heading">...</h2>
+
+      <!-- ************************************** -->
+      <!-- **        BREW LISTING HERE         ** -->
+      <!-- ************************************** -->
+      <div id="brewList" class="listing"></div>
+      <!-- END BREW LISTING -->
+    </article>
+    <!-- END PAGE CONTENT HERE -->
+    <div id="snackbar"></div>
+  </div>
+  <script>
+    window.onload = insertFooter();
+    window.onload = fillPageData(); 
+    document.getElementById('memberImageChange').onclick = function() {
+      alert("<todo> Implement Change Image");
+    };
+    document.getElementById('map').onclick = function() {
+      alert("<todo> Implement Change Location");
+    };
+
+    // document.getElementsByTagName('footer')[0]
+    
+  </script>
+
+</body>
+</html>
+
+

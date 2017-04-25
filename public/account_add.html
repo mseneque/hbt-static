@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HomeBrew Traders</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel='stylesheet' href='./stylesheets/style.css'/>
+  <link href='http://fonts.googleapis.com/css?family=Crimson%20Text' rel='stylesheet'/>
+  <!-- /link(rel='stylesheet', href='/stylesheets/styles-chat.css') -->
+
+  <script src="./javascripts/common.js"></script>
+  <script src="./javascripts/userData.js"></script>
+  <script src="./javascripts/join.js"></script>
+  <script src="./javascripts/account_add.js"></script>
+  <script>
+    if (!isLoggedIn()) {
+      navigateToPage("login.html");
+    }
+  </script>
+  <!-- web Shim for Date (#firefox) (jquery is required)-->
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.js"></script>
+  <link rel="stylesheet" href="http://cdn.jsdelivr.net/webshim/1.14.5/shims/styles/shim.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <ul class="navbar" draggable="false">
+      <li style="color: red;">
+        <strong> Home <br/> Brew <br/> Traders </strong>
+      </li>
+      <li>
+        <a href="trading.html" draggable="false"> 
+          <span>
+            <img src="./images/home.svg" draggable="false" alt="home image" />
+            <br/>
+            <span class="whiteShadow">Trading</span>
+          </span>
+        </a>
+      </li>  
+      <li>
+        <a class="active" href="account.html" draggable="false">
+          <span> 
+            <img src="./images/bell.svg" draggable="false" alt="notification image" /> 
+            <br/>
+            <span class="whiteShadow">Account</span>
+          </span>
+        </a>
+      </li>  
+      <li>
+        <a href="/all" draggable="false"> 
+          <span> 
+            <img src="./images/chat.svg" draggable="false" alt="chat image" /> 
+            <br/>
+            <span class="whiteShadow">All Members</span>
+          </span>
+        </a>
+      </li>
+      <li class="right">
+        <a id="navbarAccount" class="whiteShadow" href='login.html'>log out</a>
+      </li>
+      <li class="right">
+        <a id="navbarAbout" class="whiteShadow" href=about.html>About</a>
+      </li>
+    </ul> 
+  </header>
+
+  <div class="spacer"> &nbsp;</div>
+  <div class="content whiteShadow">  
+    <!-- ************************************** -->
+    <!-- **        PAGE CONTENT HERE         ** -->
+    <!-- ************************************** -->
+    <article class="genericText">
+      <div class="centerText">
+        <h1 id="memberName">Member Not Found!!</h1>
+        <div id="memberImageDiv">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSODALYDYo2dqN0DG_kPNi2X7EAy1K8SpRRZQWkNv9alC62IHggOw" alt="Avatar"/>
+        </div>
+        <!-- <p></p>
+        <button id="imgBtn">Change Image</button>
+        &nbsp;
+        <a href='account_add.html'>
+          <button id="addBrew">Add New Brew</button>
+        </a> -->
+        <p id="rating">Average brew rating: </p> 
+      </div>
+      <hr/>
+      <h2>Enter Your New Brew Details</h2>
+      <div id="brewList" class="listing">
+      
+        <!-- ************************************** -->
+        <!-- **        ADD BREW FORM HERE        ** -->
+        <!-- ************************************** -->
+          <!-- <form id="accountAdd" onsubmit="checkForm() && snackbarMessageLocalStorage('Brew Added Successfully') && navigateToPage('account.html'); return false;"> -->
+          <form id="accountAdd">
+            <article>
+              <h4>Name of your Brew:</h4>
+              <!-- <label for="brewName">Name of your Brew: </label> -->
+              <input type="text" id="brewName" name="brewName" maxlength="15"/>
+            </article>
+            <article>
+              <h4>Select a Type for your Brew:</h4>
+              <!-- <label for="brewType">Select a Type for your Brew: </label> -->
+              <select id="brewTypes">
+                <option value="pleaseSelect">Please Select ...</option>
+                <option value="ale">Ale</option>
+                <option value="lager">Lager</option>
+                <option value="stout">Stout</option>
+                <option value="pilsner">Pilsner</option>
+                <option value="paleAle">Pale Ale</option>
+                <option value="wheatBeer">Wheat Beer</option>
+                <option value="porter">Porter</option>
+                <option value="indiaPaleAle">India Pale Ale</option>
+                <option value="bitter">Bitter</option>
+                <option value="bock">Bock</option>
+                <option value="brownAle">Brown Ale</option>
+                <option value="paleLager">Pale Lager</option>
+                <option value="lambic">Lambic</option>
+                <option value="midAle">Mid-Strength Ale</option>
+                <option value="barleyWine">Barley Wine</option>
+                <option value="flandersRedAle">Flanders Red Ale</option>
+                <option value="saison">Saison</option>
+                <option value="dunkel">Dunkel</option>
+                <option value="cider">Cider</option>
+                <option value="kolsch">Kolsch</option>
+                <option value="marzen">Marzen</option>
+                <option value="creamAle">Cream ALe</option>
+                <option value="tripel">Tripel</option>
+                <option value="americanPaleAle">American Pale Ale</option>
+
+                <option value="other">other</option>
+              </select>
+            </article>
+            <article>
+              <h4>How many Litres will you Produce?:</h4>
+              <!-- <label for="brewLitres">How many Litres will you Produce?:</label> -->
+              <input type="number" id="brewLitres" name="brewLitres"/>
+            </article>
+            <article>
+              <h4>What date will you bottle?:</h4>
+              <!-- <label for="brewDate">What date will you bottle?: </label> -->
+              <input type="date" id="brewDate" name="brewDate"/>
+            </article>
+              <span id="hint" class="requiredNotice"></span>
+              <span id="success"></span>
+              <br/>
+              <button id="newBrewSubmit" class="submit" type="submit" name="submit" value="Confirm Details">Confirm Details</button>
+              <button id="cancel" class="cancel" type="button" name="cancel" value="Cancel">Cancel</button>
+          </form>
+        <!-- END BREW FORM HERE -->
+      <div id="snackbar"></div>
+      </div>
+    </article>
+    <!-- END PAGE CONTENT HERE -->
+  </div>
+  <script>
+    window.onload = insertFooter();
+    window.onload = fillPageData()
+    document.getElementById('cancel').onclick = goBack;
+    // document.getElementById('brewType').onclick = brewTypeValidator;
+
+    document.getElementById('accountAdd').onsubmit = function() {
+        checkForm() && saveMemberBrewToLocalStorage() && snackbarMessage('Brew Added Successfully') && navigateToPage('account.html'); return false;
+    }    
+
+    
+  </script>
+
+  <!-- web Shim for Date (#firefox) -->
+  <script src="http://cdn.jsdelivr.net/webshim/1.14.5/polyfiller.js"></script>
+  <script>
+    webshims.setOptions('forms-ext', {types: 'date'});
+    webshims.polyfill('forms forms-ext');
+  </script>
+
+</body>
+</html>
+
+
